@@ -8,21 +8,22 @@ This project presents an end-to-end workflow for analyzing sales data using SQL 
 
 | Notebook Filename | Description |
 |-------------------|-------------|
-| `sales-db&preprocessing.ipynb` | Creating and populating the SQLite database with realistic sales data |
-| `sales-basicanalysis (sql).ipynb` | SQL-based exploratory analysis using aggregation, grouping, filtering, etc. |
-| `sales-advanced analysis (python).ipynb` | Advanced analysis and visualizations using pandas and matplotlib |
+| `Sales-DB&Preprocessing.ipynb` | Creating and populating the SQLite database with realistic sales data |
+| `Sales-BasicAnalysis.ipynb` | SQL-based exploratory analysis using aggregation, grouping, filtering, etc. |
+| `Sales-AdvancedAnalysis.ipynb` | Advanced analysis and visualizations using pandas and matplotlib |
 
 ---
 
 ## 1️⃣ Database Schema
 
-In `sales-db&preprocessing.ipynb`, we created a relational SQLite database from scratch.
+In `Sales-DB&Preprocessing.ipynb`, we created a relational SQLite database from scratch.
 
 ### Tables
 
 - `customers`  
   - `customer_id` (Primary Key)  
-  - `name`  
+  - `name`
+  - `age`
   - `location`
 
 - `products`  
@@ -43,10 +44,11 @@ In `sales-db&preprocessing.ipynb`, we created a relational SQLite database from 
 
 ### Example Entry (customers)
 
-| customer_id | name       | location  |
-|-------------|------------|-----------|
-| 1           | Alice Doe  | Berlin    |
-| 2           | John Smith | Amsterdam |
+| customer_id | name         | age | location   |
+|-------------|--------------|-----|------------|
+| 1           | John Smith   |  28 | New York   |
+| 2           | Emma Johnson |  34 |Los Angeles |
+
 
 ---
 
@@ -58,33 +60,41 @@ We performed the following types of queries using raw SQL on the created databas
 
 ### 🔹 Sample Queries
 
-- **Total sales per product:**
+
+
+## What are the most sold products?
+
 ```sql
-SELECT p.product_name, SUM(od.quantity * p.price) AS total_sales
-FROM order_details od
-JOIN products p ON od.product_id = p.product_id
-GROUP BY p.product_name
-ORDER BY total_sales DESC;
+SELECT p.name AS product_name,
+       SUM(od.quantity) AS total_sold
+FROM products p
+JOIN order_details od ON p.product_id = od.product_id
+GROUP BY p.name
+ORDER BY total_sold DESC;
 ```
 
-- **Top customers by total purchase:**
+## What are the top customers by total spending?
+
 ```sql
-SELECT c.name, SUM(od.quantity * p.price) AS total_spent
+SELECT c.name AS customer_name,
+       SUM(od.quantity * od.unit_price) AS total_spent
 FROM customers c
 JOIN orders o ON c.customer_id = o.customer_id
 JOIN order_details od ON o.order_id = od.order_id
-JOIN products p ON od.product_id = p.product_id
 GROUP BY c.name
 ORDER BY total_spent DESC;
 ```
 
-### 📊 Sample Result
+## Which customers placed the highest number of orders?
 
-| Product Name | Total Sales (€) |
-|--------------|-----------------|
-| Monitor      | 2,300           |
-| Mouse        | 1,800           |
-| Laptop       | 1,200           |
+```sql
+SELECT c.customer_id, c.name, COUNT(o.order_id) AS num_orders
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, c.name
+ORDER BY num_orders DESC
+LIMIT 5;
+```
 
 ---
 
@@ -102,13 +112,39 @@ We used **pandas** for further data wrangling and **matplotlib**/**seaborn** for
 - **Most active customers**
 - **Seasonal fluctuations in order volume**
 
-### 📈 Example Plot: Monthly Sales
+### 📈 Example Plot: Sales over time (monthtly)
 
 ```python
-df['order_date'] = pd.to_datetime(df['order_date'])
-monthly_sales = df.groupby(df['order_date'].dt.to_period('M'))['revenue'].sum()
-monthly_sales.plot(kind='bar', figsize=(10,5), title='Monthly Revenue')
+
+full_data['order_date'] = pd.to_datetime(full_data['order_date'])
+sales_over_time = full_data.groupby(full_data['order_date'].dt.to_period('M'))['total_price'].sum()
+sales_over_time.index = sales_over_time.index.to_timestamp()
+
+plt.figure(figsize=(12, 5))
+sales_over_time.plot(marker='o', linestyle='-')
+plt.title('Sales Trend Over Time')
+plt.xlabel('Date')
+plt.ylabel('Total Sales')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
 ```
+
+### City Sales
+
+```python
+city_sales = full_data.groupby('city')['total_price'].sum()
+
+plt.figure(figsize=(8, 8))
+plt.pie(city_sales, labels=city_sales.index, autopct='%1.1f%%', startangle=90)
+plt.title('Sales Distribution by City')
+plt.show()
+```
+
+### Clustering Customers using PCA:
+
+
+### Basket Recommendation using Apriori Algorithm:
 
 ---
 
@@ -123,21 +159,6 @@ monthly_sales.plot(kind='bar', figsize=(10,5), title='Monthly Revenue')
 - Scikit-learn
 - ipython-sql
 - mlxtend
-pandas
-matplotlib
-seaborn
-scikit-learn
-mlxtend
-ipython-sql
-
----
-
-## 🔍 Goals Achieved
-
-- Practiced SQL and database schema design
-- Wrote complex joins, filters, and aggregations
-- Transitioned SQL data into pandas for deeper analysis
-- Visualized key business metrics
 
 ---
 
@@ -150,3 +171,4 @@ For questions or collaborations:
 📍 Currently open to data-related roles and internships
 
 ---
+
