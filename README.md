@@ -74,7 +74,7 @@ ORDER BY total_sold DESC;
 ```
 
 <img src="images/most_sold_products.png" alt="most_sold_products" width="200"/>
-
+---
 ## What are the top customers by total spending?
 
 ```sql
@@ -108,6 +108,7 @@ We used **pandas** for further data wrangling and **matplotlib**/**seaborn** for
 - **Basket Recommendation and Association Rule Interpretations using Apriori Algorithm**
 
 ### 📈 Example Plot: Sales over time (monthly)
+---
 
 ```python
 
@@ -126,6 +127,7 @@ plt.show()
 ```
 
 <img src="images/sales_over_time.png" alt="sales_over_time" width="500"/>
+---
 
 ### City Sales
 
@@ -140,16 +142,20 @@ plt.show()
 
 <img src="images/sales_by_city.png" alt="sales_by_city" width="380"/>
 
+---
 ### Clustering Customers using PCA:
 
 
 <img src="images/cluster.png" alt="cluster" width="400"/>
 
 Cluster 0: High-Spending Loyalists
-Cluster 1: Occasional Shoppers
-Cluster 2: Active and Diverse Buyers
-Cluster 3: Low Engagement Customers
 
+Cluster 1: Occasional Shoppers
+
+Cluster 2: Active and Diverse Buyers
+
+Cluster 3: Low Engagement Customers
+---
 ### Basket Recommendation using Apriori Algorithm
 
 #### Key Discovered patterns:
