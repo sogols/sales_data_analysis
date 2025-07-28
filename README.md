@@ -54,7 +54,7 @@ In `Sales-DB&Preprocessing.ipynb`, we created a relational SQLite database from 
 
 ## 2️⃣ SQL-Based Analysis
 
-Notebook: `sales-basicanalysis (sql).ipynb`
+Notebook: `Sales-BasicAnalysis.ipynb`
 
 We performed the following types of queries using raw SQL on the created database:
 
@@ -72,6 +72,7 @@ JOIN order_details od ON p.product_id = od.product_id
 GROUP BY p.name
 ORDER BY total_sold DESC;
 ```
+![Most sold products](images/most_sold_products.png)
 
 ## What are the top customers by total spending?
 
@@ -84,23 +85,13 @@ JOIN order_details od ON o.order_id = od.order_id
 GROUP BY c.name
 ORDER BY total_spent DESC;
 ```
-
-## Which customers placed the highest number of orders?
-
-```sql
-SELECT c.customer_id, c.name, COUNT(o.order_id) AS num_orders
-FROM customers c
-JOIN orders o ON c.customer_id = o.customer_id
-GROUP BY c.customer_id, c.name
-ORDER BY num_orders DESC
-LIMIT 5;
-```
+![total spent](images/total_spent.png)
 
 ---
 
 ## 3️⃣ Advanced Analysis & Visualizations
 
-Notebook: `sales-advanced analysis (python).ipynb`
+Notebook: `Sales-AdvancedAnalysis.ipynb`
 
 We used **pandas** for further data wrangling and **matplotlib**/**seaborn** for visualizations.
 
@@ -111,8 +102,10 @@ We used **pandas** for further data wrangling and **matplotlib**/**seaborn** for
 - **Correlation between quantity and revenue**
 - **Most active customers**
 - **Seasonal fluctuations in order volume**
+- **Clustering Customers Based on Purchase Behavior**
+- **Basket Recommendation and Association Rule Interpretations using Apriori Algorithm**
 
-### 📈 Example Plot: Sales over time (monthtly)
+### 📈 Example Plot: Sales over time (monthly)
 
 ```python
 
@@ -130,6 +123,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Montly Sale](images/sales_over_time.png)
+
 ### City Sales
 
 ```python
@@ -141,10 +136,22 @@ plt.title('Sales Distribution by City')
 plt.show()
 ```
 
+![Sales by City](images/sales_by_city.png)
+
 ### Clustering Customers using PCA:
 
 
-### Basket Recommendation using Apriori Algorithm:
+![Customer Clusters](images/cluster.png)
+
+Cluster 0: High-Spending Loyalists
+Cluster 1: Occasional Shoppers
+Cluster 2: Active and Diverse Buyers
+Cluster 3: Low Engagement Customers
+
+### Basket Recommendation using Apriori Algorithm
+
+#### Key Discovered patterns:
+![apriori](images/apriori.png)
 
 ---
 
