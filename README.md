@@ -87,7 +87,7 @@ GROUP BY c.name
 ORDER BY total_spent DESC;
 ```
 
-<img src="images/total_spent.png" alt="total_spent" width="300"/>
+<img src="images/total_spent.png" alt="total_spent" width="250"/>
 
 ---
 
@@ -138,7 +138,7 @@ plt.title('Sales Distribution by City')
 plt.show()
 ```
 
-<img src="images/sales_by_city.png" alt="sales_by_city" width="400"/>
+<img src="images/sales_by_city.png" alt="sales_by_city" width="380"/>
 
 ### Clustering Customers using PCA:
 
@@ -153,7 +153,7 @@ Cluster 3: Low Engagement Customers
 ### Basket Recommendation using Apriori Algorithm
 
 #### Key Discovered patterns:
-<img src="images/apriori.png" alt="apriori" width="600"/>
+<img src="images/apriori.png" alt="apriori" width="620"/>
 
 ---
 
