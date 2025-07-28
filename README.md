@@ -155,6 +155,7 @@ Cluster 1: Occasional Shoppers
 Cluster 2: Active and Diverse Buyers
 
 Cluster 3: Low Engagement Customers
+
 ---
 ### Basket Recommendation using Apriori Algorithm
 
