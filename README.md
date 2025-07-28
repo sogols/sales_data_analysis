@@ -72,7 +72,8 @@ JOIN order_details od ON p.product_id = od.product_id
 GROUP BY p.name
 ORDER BY total_sold DESC;
 ```
-![Most sold products](images/most_sold_products.png)
+
+<img src="images/most_sold_products.png" alt="most_sold_products" width="400"/>
 
 ## What are the top customers by total spending?
 
@@ -85,7 +86,8 @@ JOIN order_details od ON o.order_id = od.order_id
 GROUP BY c.name
 ORDER BY total_spent DESC;
 ```
-![total spent](images/total_spent.png)
+
+<img src="images/total_spent.png" alt="total_spent" width="400"/>
 
 ---
 
@@ -123,7 +125,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![Montly Sale](images/sales_over_time.png)
+<img src="images/sales_over_time.png" alt="sales_over_time" width="400"/>
 
 ### City Sales
 
@@ -136,12 +138,12 @@ plt.title('Sales Distribution by City')
 plt.show()
 ```
 
-![Sales by City](images/sales_by_city.png)
+<img src="images/sales_by_city.png" alt="sales_by_city" width="400"/>
 
 ### Clustering Customers using PCA:
 
 
-![Customer Clusters](images/cluster.png)
+<img src="images/cluster.png" alt="cluster" width="400"/>
 
 Cluster 0: High-Spending Loyalists
 Cluster 1: Occasional Shoppers
@@ -151,7 +153,7 @@ Cluster 3: Low Engagement Customers
 ### Basket Recommendation using Apriori Algorithm
 
 #### Key Discovered patterns:
-![apriori](images/apriori.png)
+<img src="images/apriori.png" alt="apriori" width="400"/>
 
 ---
 
