@@ -73,7 +73,7 @@ GROUP BY p.name
 ORDER BY total_sold DESC;
 ```
 
-<img src="images/most_sold_products.png" alt="most_sold_products" width="400"/>
+<img src="images/most_sold_products.png" alt="most_sold_products" width="200"/>
 
 ## What are the top customers by total spending?
 
@@ -87,7 +87,7 @@ GROUP BY c.name
 ORDER BY total_spent DESC;
 ```
 
-<img src="images/total_spent.png" alt="total_spent" width="400"/>
+<img src="images/total_spent.png" alt="total_spent" width="300"/>
 
 ---
 
@@ -125,7 +125,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img src="images/sales_over_time.png" alt="sales_over_time" width="400"/>
+<img src="images/sales_over_time.png" alt="sales_over_time" width="500"/>
 
 ### City Sales
 
@@ -153,7 +153,7 @@ Cluster 3: Low Engagement Customers
 ### Basket Recommendation using Apriori Algorithm
 
 #### Key Discovered patterns:
-<img src="images/apriori.png" alt="apriori" width="400"/>
+<img src="images/apriori.png" alt="apriori" width="600"/>
 
 ---
 
