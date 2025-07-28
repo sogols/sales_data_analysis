@@ -1,0 +1,35 @@
+customer_id,name,gender,age,city
+1,John Smith,M,28,New York
+2,Emma Johnson,F,34,Los Angeles
+3,Michael Brown,M,22,Chicago
+4,Olivia Davis,F,45,Houston
+5,William Wilson,M,34,Phoenix
+6,Sophia Martinez,F,29,Unknown
+7,James Anderson,M,31,Philadelphia
+8,Isabella Thomas,F,27,San Antonio
+9,Benjamin Jackson,M,40,San Diego
+10,Mia White,F,35,Dallas
+11,Elijah Harris,M,26,San Jose
+12,Charlotte Martin,F,33,Austin
+13,Alexander Thompson,M,38,Jacksonville
+14,Amelia Garcia,F,24,Fort Worth
+15,Daniel Martinez,M,30,Columbus
+16,Harper Robinson,F,29,Charlotte
+17,Matthew Clark,M,34,Unknown
+18,Evelyn Rodriguez,F,42,San Francisco
+19,Joseph Lewis,M,37,Indianapolis
+20,Kevin Garvy,M,45,Austin
+21,Jill Garvy,F,19,New York
+22,James Potter,M,40,Phoenix
+23,Lily Potter,F,34,Phoenix
+24,Laurel Gomez,F,32,Los Angeles
+25,Frank Diaz,M,34,Phoenix
+26,Rafael Nadal,M,39,San Jose
+27,Roger Federer,M,41,Los Angeles
+28,Alexander Zverev,M,26,Los Angeles
+29,Stephen Salvatore,M,34,Virginia
+30,Damon Salvatore,M,34,Virginia
+31,Elena Gilbert,F,34,Virginia
+32,Caroline Forbes,F,34,Virginia
+33,Abigail Lee,F,32,Seattle
+34,Adam Adams,M,34,Los Angeles

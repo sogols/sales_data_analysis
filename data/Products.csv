@@ -1,0 +1,33 @@
+product_id,product_name,category,price
+1,Laptop Dell XPS,Electronics,1200.0
+2,Smartphone iPhone,Electronics,999.0
+3,Bluetooth Headphones,Electronics,150.0
+4,Office Chair,Furniture,300.0
+5,LED Desk Lamp,Furniture,45.0
+6,Coffee Maker,Appliances,80.0
+7,Electric Kettle,Appliances,35.0
+8,Smartwatch Samsung,Electronics,200.0
+9,Yoga Mat,Sports,25.0
+10,Mountain Bike,Sports,700.0
+11,Tennis Racket,Sports,120.0
+12,Water Bottle,Sports,10.0
+13,Cookware Set,Kitchen,150.0
+14,Knife Set,Kitchen,90.0
+15,Microwave Oven,Appliances,250.0
+16,Vacuum Cleaner,Appliances,180.0
+17,Dining Table,Furniture,600.0
+18,Bookshelf,Furniture,120.0
+19,Gaming Console,Electronics,400.0
+20,USB Flash Drive 64GB,Electronics,20.0
+21,Wireless Mouse,Electronics,25.0
+22,Keyboard Mechanical,Electronics,75.0
+23,Refrigerator,Appliances,500.0
+24,Dishwasher,Appliances,550.0
+25,Air Conditioner,Appliances,350.0
+26,Hair Dryer,Appliances,40.0
+27,Running Shoes,Sports,85.0
+28,Smart TV,Electronics,900.0
+29,Tablet iPad,Electronics,400.0
+30,Knife,Kitchen,25.0
+31,Airpods,Electronics,200.0
+32,Blender,Kitchen,60.0
