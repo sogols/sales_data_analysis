@@ -204,7 +204,7 @@ To explore or edit the dashboard interactively:
 
 1. Install **Tableau Public Desktop**
 2. Open the file located at:  
-   `tableau/sales_dashboard.twbx`
+   `tableau/Sales Project Workbook.twbx`
 3. Connect to your own data source or refresh for updates.
 
 ---
