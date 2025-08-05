@@ -195,7 +195,8 @@ To complement the SQL and Python analytics, an interactive **Tableau dashboard**
 
 #### **Best Customers**
 
-![best customers](images/best_customers.png)
+
+<img src="images/best_customers.png" alt="best_customers" width="700"/>
 ---
 
 ### 📎 How to open the Tableau workbook
