@@ -9,7 +9,7 @@ This project presents an end-to-end workflow for analyzing sales data using SQL 
 | Notebook Filename | Description |
 |-------------------|-------------|
 | `Sales-DB&Preprocessing.ipynb` | Creating and populating the SQLite database with realistic sales data |
-| `Sales-BasicAnalysis.ipynb` | SQL-based exploratory analysis using aggregation, grouping, filtering, etc. |
+| `Sales-BasicAnalysis.ipynb`    | SQL-based exploratory analysis using aggregation, grouping, filtering, etc. |
 | `Sales-AdvancedAnalysis.ipynb` | Advanced analysis and visualizations using pandas and matplotlib |
 
 ---
@@ -161,6 +161,51 @@ Cluster 3: Low Engagement Customers
 
 #### Key Discovered patterns:
 <img src="images/apriori.png" alt="apriori" width="620"/>
+---
+## 📊 Tableau Dashboard
+
+To complement the SQL and Python analytics, an interactive **Tableau dashboard** was created to better visualize sales KPIs and analysis.
+
+---
+
+### 🔍 What the dashboard shows:
+
+| KPI / Chart                        | Description                             |
+|------------------------------------|-----------------------------------------|
+| Total Revenue (KPI card)           | Overall revenue generated               |
+| Total Orders (KPI card)            | Number of unique orders                 |
+| Total Customers (KPI card)         | Number of unique customers              |
+| Total Products (KPI card)          | Number of unique Products               |
+| Top Customer (KPI card)            | Customer with max total spent           |
+| Top Product (KPI card)             | Most sold Product + amount              |
+| Sales Over Time (line chart)       | Monthly trend of total sales            |
+| Orders Over Time (line chart)      | Monthly trend of orders/quantity sold   |
+| Sales by Category (bubbles chart)  | Which product categories sell the most  |
+| Top Products (bar chart)           | Best-selling individual products        |
+| City Revenue (Treemap)             | Each city total revenue                 |
+| Customer Revenue (Bar Chart)       | Each customer total spending            |
+
+
+---
+
+### 📌 Screenshot
+#### **Dashboard**
+
+![Sales Dashboard](images/Dashboard.png)
+
+#### **Best Customers**
+
+![best customers](images/best_customers.png)
+---
+
+### 📎 How to open the Tableau workbook
+
+To explore or edit the dashboard interactively:
+
+1. Install **Tableau Public Desktop**
+2. Open the file located at:  
+   `tableau/sales_dashboard.twbx`
+3. Connect to your own data source or refresh for updates.
 
 ---
 
@@ -175,6 +220,7 @@ Cluster 3: Low Engagement Customers
 - Scikit-learn
 - ipython-sql
 - mlxtend
+- Tableau Public
 
 ---
 
